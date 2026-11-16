@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://easygo-creative-studio.netlify.app/sitemap.xml
