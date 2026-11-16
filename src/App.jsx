@@ -28,7 +28,7 @@ function whatsappLink(message = "") {
 
 I visited your website and would like to enquire about your design services.
 
-${message ? `My enquiry: ${message}` : "Please share details about your design services and how we can get started."}
+${message ? `My enquiry: ${message}` : "Please share details about your custom design services and how we can get started."}
 
 Kindly guide me through the next steps.
 
@@ -42,25 +42,25 @@ const services = [
     icon: Utensils,
     title: "Menu Designs",
     sub: "Restaurant & Café Menus",
-    tag: "Food & beverage"
+    tag: "Custom menu design"
   },
   {
     icon: Image,
     title: "Banners & Posters",
     sub: "Promotions & Offers",
-    tag: "Print design"
+    tag: "Custom print design"
   },
   {
     icon: Tag,
     title: "Branding",
     sub: "Logo & Identity",
-    tag: "Brand identity"
+    tag: "Brand identity design"
   },
   {
     icon: Instagram,
     title: "Social Media Designs",
     sub: "Posts & Stories",
-    tag: "Digital creatives"
+    tag: "Social media creatives"
   },
   {
     icon: Store,
@@ -71,8 +71,8 @@ const services = [
   {
     icon: WandSparkles,
     title: "Custom Designs",
-    sub: "Any Idea, We Create!",
-    tag: "Made to order"
+    sub: "Original Designs from Scratch",
+    tag: "Made for your idea"
   }
 ];
 
@@ -80,27 +80,27 @@ const portfolio = [
   {
     image: "/images/portfolio-menu.jpg",
     title: "The Royal Bite",
-    type: "Restaurant menu"
+    type: "Restaurant menu design"
   },
   {
     image: "/images/portfolio-birthday.jpg",
     title: "Birthday Celebration",
-    type: "Event creative"
+    type: "Event creative design"
   },
   {
     image: "/images/portfolio-sale.jpg",
     title: "Big Sale",
-    type: "Retail promotion"
+    type: "Retail promotional design"
   },
   {
     image: "/images/portfolio-bakery.jpg",
     title: "The Bakery",
-    type: "Brand collateral"
+    type: "Brand collateral design"
   },
   {
     image: "/images/portfolio-food.jpg",
     title: "Good Food, Good Mood",
-    type: "Food promotion"
+    type: "Food promotional design"
   }
 ];
 
@@ -197,7 +197,7 @@ export default function App() {
             </a>
 
             <a href="#templates" onClick={closeMenu}>
-              Templates
+              Design Ideas
             </a>
 
             <a href="#about" onClick={closeMenu}>
@@ -212,7 +212,7 @@ export default function App() {
           <a
             className="nav-cta"
             href={whatsappLink(
-              "I would like to discuss a design project. Please guide me."
+              "I would like to discuss a custom design project. Please guide me."
             )}
             target="_blank"
             rel="noreferrer"
@@ -241,19 +241,21 @@ export default function App() {
           </h1>
 
           <p>
-            Premium Design Solutions for Cafés, Restaurants,
+            Custom graphic design for cafés, restaurants, shops
             <br className="desktop" />
-            Shops & More in <strong>Lucknow.</strong>
+            and growing businesses in <strong>Lucknow.</strong>
+            <br />
+            Original designs, thoughtfully created from scratch.
           </p>
 
           <div className="hero-actions">
-            <a className="btn btn-orange" href="#templates">
-              Explore Templates <ArrowRight size={18} />
+            <a className="btn btn-orange" href="#portfolio">
+              Explore Our Designs <ArrowRight size={18} />
             </a>
 
-            <a className="btn btn-outline" href="#portfolio">
+            <a className="btn btn-outline" href="#contact">
               <span className="play">▶</span>
-              Watch Our Work
+              Start a Project
             </a>
           </div>
 
@@ -290,15 +292,18 @@ export default function App() {
           </div>
 
           <h2>
-            A Glimpse of
+            Creative Ideas.
             <br />
-            <em>Our Work</em>
+            <em>Custom Made.</em>
           </h2>
 
-          <p>Beautiful designs. Real impact.</p>
+          <p>
+            Explore examples of our creative work. Every new project is
+            designed from scratch to match the client's brand, idea and needs.
+          </p>
 
-          <a className="btn btn-outline small" href="#templates">
-            View All Templates <ArrowRight size={15} />
+          <a className="btn btn-outline small" href="#contact">
+            Discuss Your Project <ArrowRight size={15} />
           </a>
         </div>
 
@@ -308,8 +313,9 @@ export default function App() {
               className="portfolio-card"
               key={item.title}
               onClick={() => setSelected(item)}
+              aria-label={`Preview ${item.title}`}
             >
-              <img src={item.image} alt={item.title} />
+              <img src={item.image} alt={`${item.title} - ${item.type}`} />
 
               <span>
                 <b>{item.title}</b>
@@ -324,19 +330,22 @@ export default function App() {
         </div>
       </section>
 
-      {/* TEMPLATES */}
+      {/* DESIGN IDEAS */}
       <section className="templates-section section-pad" id="templates">
         <div className="section-heading">
           <div>
             <div className="section-kicker">
-              <i /> Ready-to-customize designs
+              <i /> Design Inspiration
             </div>
 
             <h2>
-              Explore Our <em>Templates</em>
+              Explore Design <em>Ideas</em>
             </h2>
 
-            <p>Choose a design you love. We'll make it yours.</p>
+            <p>
+              These examples give you an idea of our work. Your design will
+              be created from scratch and tailored to your requirements.
+            </p>
           </div>
 
           <div className="filter-row">
@@ -358,8 +367,9 @@ export default function App() {
               <button
                 className="template-image"
                 onClick={() => setSelected(t)}
+                aria-label={`Preview ${t.name}`}
               >
-                <img src={t.image} alt={t.name} />
+                <img src={t.image} alt={`${t.name} design example`} />
                 <span>
                   Quick preview <ArrowUpRight size={15} />
                 </span>
@@ -368,7 +378,7 @@ export default function App() {
               <div className="template-info">
                 <div>
                   <h3>{t.name}</h3>
-                  <small>{t.category}</small>
+                  <small>{t.category} design inspiration</small>
                 </div>
 
                 <b>Custom Quote</b>
@@ -376,13 +386,13 @@ export default function App() {
 
               <a
                 href={whatsappLink(
-                  `I am interested in "${t.name}" (${t.category}). I would like to discuss the pricing and customization options personally. Please share more details.`
+                  `I liked the "${t.name}" (${t.category}) design example on your website. I would like to discuss creating an original design from scratch for my business. Please share the details and quotation.`
                 )}
                 target="_blank"
                 rel="noreferrer"
                 className="template-order"
               >
-                Discuss Your Design <ArrowRight size={15} />
+                Create My Custom Design <ArrowRight size={15} />
               </a>
             </article>
           ))}
@@ -397,16 +407,18 @@ export default function App() {
           </div>
 
           <h2>
-            Good design makes
+            Your vision.
             <br />
-            <em>you stand out.</em>
+            <em>Our original design.</em>
           </h2>
 
           <p>
-            We help local businesses look their best with creative,
-            thoughtful and affordable design solutions. From your first
-            menu to a complete brand identity, let's build something
-            people remember.
+            EASYGo Creative Design Studio is a custom graphic design studio
+            serving businesses in Lucknow. We create original designs from
+            scratch—not just edits of ready-made templates. From restaurant
+            menus and promotional posters to social media creatives and
+            brand identities, every design is shaped around your idea,
+            business and audience.
           </p>
 
           <a className="btn btn-orange" href="#contact">
@@ -418,24 +430,24 @@ export default function App() {
           <div>
             <Gem />
             <span>
-              <b>Premium Quality</b>
-              <small>Designs made with care</small>
+              <b>Original Creative Work</b>
+              <small>Custom designs created from scratch</small>
             </span>
           </div>
 
           <div>
             <Zap />
             <span>
-              <b>Fast Turnaround</b>
-              <small>Quick and clear communication</small>
+              <b>Clear Communication</b>
+              <small>A smooth process from idea to design</small>
             </span>
           </div>
 
           <div>
             <Handshake />
             <span>
-              <b>Affordable Packages</b>
-              <small>Options for every business</small>
+              <b>Designed Around You</b>
+              <small>Creative solutions for your business needs</small>
             </span>
           </div>
         </div>
@@ -449,13 +461,15 @@ export default function App() {
           </div>
 
           <h2>
-            Let's grow your brand
+            Have an idea?
             <br />
-            <em>together.</em>
+            <em>Let's create it.</em>
           </h2>
 
           <p>
-            Have an idea? Tell us what you need. We'll help bring it to life.
+            Looking for a custom poster designer, restaurant menu designer
+            or branding design service in Lucknow? Tell us about your idea.
+            We'll work with you to create an original design from scratch.
           </p>
         </div>
 
@@ -463,14 +477,16 @@ export default function App() {
           <MapPin />
 
           <div>
-            <b>Proudly serving Lucknow</b>
-            <small>Working with cafés, restaurants, shops & more.</small>
+            <b>Custom Graphic Design in Lucknow</b>
+            <small>
+              Serving cafés, restaurants, shops and growing local businesses.
+            </small>
           </div>
 
           <a
             className="btn btn-orange"
             href={whatsappLink(
-              "I would like to request a free design consultation. Please contact me with further details."
+              "I would like to discuss a custom design project in Lucknow. I need an original design created from scratch. Please guide me through the process and quotation."
             )}
             target="_blank"
             rel="noreferrer"
@@ -489,11 +505,7 @@ export default function App() {
           All rights reserved.
         </span>
 
-        <a
-          href={whatsappLink()}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={whatsappLink()} target="_blank" rel="noreferrer">
           <MessageCircle size={17} />
           Let's talk
         </a>
@@ -511,6 +523,7 @@ export default function App() {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
+            aria-label="Design preview"
           >
             <button
               className="modal-close"
@@ -534,7 +547,7 @@ export default function App() {
               <a
                 className="btn btn-orange"
                 href={whatsappLink(
-                  `I would like to enquire about ordering or customizing "${selected.name || selected.title}". Please share the details and quotation options.`
+                  `I liked the "${selected.name || selected.title}" design example. I would like to discuss creating a custom design from scratch for my business. Please share the details and quotation.`
                 )}
                 target="_blank"
                 rel="noreferrer"
