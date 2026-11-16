@@ -28,7 +28,7 @@ function whatsappLink(message = "") {
 
 I visited your website and would like to enquire about your design services.
 
-${message ? `My enquiry: ${message}` : "Please share your design services, available packages, pricing, and delivery timelines."}
+${message ? `My enquiry: ${message}` : "Please share details about your design services and how we can get started."}
 
 Kindly guide me through the next steps.
 
@@ -108,37 +108,31 @@ const templates = [
   {
     name: "Premium Food Menu",
     category: "Menus",
-    price: "From ₹499",
     image: "/images/portfolio-menu.jpg"
   },
   {
     name: "Café Special Offer",
     category: "Posters",
-    price: "From ₹299",
     image: "/images/hero-showcase.jpg"
   },
   {
     name: "Birthday Celebration",
     category: "Social Media",
-    price: "From ₹249",
     image: "/images/portfolio-birthday.jpg"
   },
   {
     name: "Grand Opening",
     category: "Posters",
-    price: "From ₹299",
     image: "/images/portfolio-bakery.jpg"
   },
   {
     name: "Big Sale Creative",
     category: "Social Media",
-    price: "From ₹249",
     image: "/images/portfolio-sale.jpg"
   },
   {
     name: "Bakery Menu Style",
     category: "Menus",
-    price: "From ₹499",
     image: "/images/portfolio-food.jpg"
   }
 ];
@@ -377,18 +371,18 @@ export default function App() {
                   <small>{t.category}</small>
                 </div>
 
-                <b>{t.price}</b>
+                <b>Custom Quote</b>
               </div>
 
               <a
                 href={whatsappLink(
-                  `I am interested in "${t.name}" (${t.category}), listed at ${t.price}. Please share more details.`
+                  `I am interested in "${t.name}" (${t.category}). I would like to discuss the pricing and customization options personally. Please share more details.`
                 )}
                 target="_blank"
                 rel="noreferrer"
                 className="template-order"
               >
-                Order this design <ArrowRight size={15} />
+                Discuss Your Design <ArrowRight size={15} />
               </a>
             </article>
           ))}
@@ -540,7 +534,7 @@ export default function App() {
               <a
                 className="btn btn-orange"
                 href={whatsappLink(
-                  `I would like to enquire about ordering or customizing "${selected.name || selected.title}". Please share the details.`
+                  `I would like to enquire about ordering or customizing "${selected.name || selected.title}". Please share the details and quotation options.`
                 )}
                 target="_blank"
                 rel="noreferrer"
